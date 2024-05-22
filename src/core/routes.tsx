@@ -1,0 +1,10 @@
+export const HOME = "/home";
+export const CONTRACT = "/contract";
+export const FARMS = "/contract/farms";
+export const INFOCHECK = "/contract/info-check";
+export const ESTIMATION = "/contract/estimation";
+export const CONTRACTPREVIEW = "/contract/contract-preview";
+export const AUTH = "/auth";
+export const PHONE = "/auth/phone";
+export const NATIONALID = "/auth/national-id";
+export const OTP = "/auth/otp";

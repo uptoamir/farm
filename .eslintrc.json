@@ -1,0 +1,59 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "settings": {
+    "next": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "func-style": ["error", "expression"],
+    "id-denylist": ["error", "callback"],
+    "id-length": ["error", { "min": 1 }],
+    // "logical-assignment-operators": [
+    //   "error",
+    //   "always",
+    //   { "enforceForIfStatements": true }
+    // ],
+    "max-depth": ["error", 3],
+    "max-lines": [
+      "error",
+      { "max": 300, "skipComments": true, "skipBlankLines": true }
+    ],
+    "max-nested-callbacks": ["error", 3],
+    "max-params": ["error", 5],
+    "max-statements": ["error", 12],
+    // "multiline-comment-style": ["error", "starred-block"],
+    "no-confusing-arrow": [
+      "error",
+      { "allowParens": true, "onlyOneSimpleParam": false }
+    ],
+    "no-console": "warn",
+    "no-empty-function": "error",
+    "no-eq-null": "error",
+    "no-extra-bind": "error",
+    "no-extra-label": "error",
+    "yoda": "error",
+    // "vars-on-top": "error",
+    "prefer-template": "error",
+    "prefer-spread": "error",
+    "no-await-in-loop": "error",
+    "no-constant-binary-expression": "error",
+    "no-duplicate-imports": "error",
+    "no-promise-executor-return": "error",
+    "no-self-compare": "error",
+    "no-template-curly-in-string": "error",
+    "no-unreachable-loop": "error",
+    "no-use-before-define": "error",
+    "require-atomic-updates": "error",
+    "block-scoped-var": "error",
+    // "camelcase": "error",
+    "complexity": ["error", 10],
+    "eqeqeq": "error",
+    "react-hooks/rules-of-hooks": "warn",
+    "logical-assignment-operators": "off"
+  }
+}

@@ -1,0 +1,13 @@
+stages:
+      - deploy
+
+deploy on darkube:
+      image: hamravesh.hamdocker.ir/public/darkube-cli:v1.1
+      stage: deploy
+      only:
+            - develop
+      script:
+            - echo "$CI_REGISTRY_PASSWORD" | docker login $IMAGE -u "$CI_REGISTRY_USER" --password-stdin
+            - docker build -f Dockerfile -t $IMAGE:stage -t $IMAGE:$CI_COMMIT_SHORT_SHA --build-arg FARM_CORE_URL=$BASE_BACKEND_URL --build-arg GOOGLE_ANALYTICS_API_ID=$GOOGLE_ANALYTICS_API_ID --build-arg SENTRY_DSN=$SENTRY_DSN .
+            - docker image push --all-tags $IMAGE
+            - darkube deploy --token $DARKUBE_TOKEN --app-id $DARKUBE_APP_ID --image-tag "$CI_COMMIT_SHORT_SHA"
